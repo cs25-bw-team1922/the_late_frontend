@@ -6,8 +6,8 @@ const client = process.env.REACT_APP_CLIENT_ID || 'hello'
 const secret = process.env.REACT_APP_CLIENT_SECRET || 'roman'
 
 //Base 64 Encode client:secret
-const api_key = btoa(`${client}:${secret}`);
-const baseURL = 'http://localhost:8080'
+// const api_key = btoa(`${client}:${secret}`);
+const baseURL = 'https://lambda-mud-test.herokuapp.com/'
 
 
 //Finds Token and Checks when it expires
@@ -32,11 +32,7 @@ export const axiosWithAuth = () => {
 
 export const loginHandler = u => dispatch => {
     axios
-        .post(`${baseURL}/oauth/token`, `grant_type=password&username=${u.username}&password=${u.password}`, {
-            headers: {
-                Authorization: `Basic ${api_key}`,
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
+        .post(`${baseURL}/api/login`, `${u}`, {
         })
         .then(res => {
             if (res.status === 200) {

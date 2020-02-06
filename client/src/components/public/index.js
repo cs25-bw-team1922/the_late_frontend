@@ -10,7 +10,7 @@ const PublicMainView = (props) =>{
         <Header />
         <Switch>
             <Route match path="/register" render={()=><RegisterForm {...props}/>} />
-            <Route match pate="/login" render={()=><LoginForm {...props} />} />
+            <Route match path="/login" render={()=><LoginForm {...props} />} />
         </Switch>
         </>
     )
