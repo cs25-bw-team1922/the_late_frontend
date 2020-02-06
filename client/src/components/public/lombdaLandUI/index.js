@@ -1,7 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 // components
-import HeadsUpDisplay from "./HeadsUpDisplay"
+import HeadsUpDisplay from "./HeadsUpDisplay/index"
+import Map from "./Map"
+import User from "./User"
+
+// dummy data
 
 export const LombdaLandUI = props => {
   return (
@@ -11,8 +15,12 @@ export const LombdaLandUI = props => {
         <MainView>
           <div className="level">lombda land</div>
           <div class="level">
-            <MapPortalWrapper>map</MapPortalWrapper>
-            <UserStatsWrapper>user stats</UserStatsWrapper>
+            <MapPortalWrapper>
+              <Map />
+            </MapPortalWrapper>
+            <UserStatsWrapper>
+              <User />
+            </UserStatsWrapper>
           </div>
           <HeadsUpWrapper>
             <HeadsUpDisplay />

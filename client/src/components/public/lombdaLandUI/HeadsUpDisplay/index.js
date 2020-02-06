@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 //components
 import RoomInfo from "./RoomInfo"
-import Chat from "./Chat"
+import Chat from "../Chat"
 
 const HeadsUpDisplay = props => {
   return (
@@ -28,6 +28,6 @@ const ChatWrapper = styled.div.attrs(props => ({
 }))`
   height: 28vh;
   margin-right: 5vw;
-//   margin-left: 2rem;
+  //   margin-left: 2rem;
 `
 export default HeadsUpDisplay
