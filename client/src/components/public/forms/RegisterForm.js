@@ -3,8 +3,6 @@ import { connect } from "react-redux";
 import { loginHandler } from "../../../util/axiosWithAuth";
 import axios from "axios";
 import { Route, Switch } from "react-router-dom";
-import "./forms.scss";
-import Zip from './Zip'
 const RegisterForm = props => {
   const [userRoles, setUserRoles] = useState();
   const [activeRole, setActiveRole] = useState();
@@ -31,7 +29,6 @@ const RegisterForm = props => {
 
   return (
     <div className="register-form">
-      <Zip/>
       <h1>Register as:</h1>
       <form
         onSubmit={e => {
