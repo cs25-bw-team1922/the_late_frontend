@@ -5,6 +5,8 @@ import RoomInfo from "./RoomInfo"
 import Chat from "../Chat"
 
 const HeadsUpDisplay = props => {
+  console.log(`heads up display:`,props);
+  
   return (
     <>
       <RoomInfoWrapper>

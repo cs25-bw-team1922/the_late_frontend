@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 // components
 import HeadsUpDisplay from "./HeadsUpDisplay/index"
@@ -27,7 +27,7 @@ const items = [
     item_damage: 1.0
   }
 ]
-const users = [
+const dummyusers = [
   {
     user_id: 0,
     first_name: "Tommy",
@@ -52,6 +52,9 @@ const users = [
   }
 ]
 export const LombdaLandUI = props => {
+  const [userStats, setUserStats] = useState(dummyusers)
+  console.log(userStats)
+
   return (
     <>
       <div>header w/ nav once api running</div>
@@ -63,21 +66,37 @@ export const LombdaLandUI = props => {
               <Map />
             </MapPortalWrapper>
             <UserStatsWrapper>
-              {users.map(user => {
+              {userStats.map(character => {
+                console.log(
+                  `character.characters`,
+                  character.characters[0].char_id
+                )
                 return (
                   <User
-                    key={user.user_id}
-                    char_name={user.characters.char_name}
-                    char_description={user.characters.char_description}
-                    char_health={user.characters.char_health}
-                    char_hacker_rank={user.characters.char_hacker_rank}
+                    key={character.user_id}
+                    first_name={character.first_name}
+                    char_name={character.characters[0].char_name}
+                    char_description={character.characters[0].char_description}
+                    char_health={character.characters[0].char_health}
+                    char_hacker_rank={character.characters[0].char_hacker_rank}
                   />
                 )
               })}
             </UserStatsWrapper>
           </div>
           <HeadsUpWrapper>
-            <HeadsUpDisplay />
+            {rooms.map(room => {
+              console.log(`room:`, room)
+              return (
+                <HeadsUpDisplay
+                  key={room.id}
+                  room_name={room.room_name}
+                  room_description={room.room_description}
+                  room_entrance={room.room_entrance}
+                  room_exit={room.room_exit}
+                />
+              )
+            })}
           </HeadsUpWrapper>
         </MainView>
       </div>
