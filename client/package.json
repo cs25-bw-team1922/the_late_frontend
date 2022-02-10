@@ -7,7 +7,7 @@
     "bulma": "^0.8.0",
     "bulma-start": "0.0.3",
     "cryptr": "^4.0.2",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.9.0",
     "react-cookies": "^0.1.1",
     "react-dom": "^16.9.0",
